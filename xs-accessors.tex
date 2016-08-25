@@ -2,33 +2,24 @@
 \usepackage[utf8]{inputenc}
 
 \usetheme{Warsaw}
-%\usetheme{Ilmenau}
-%\usetheme{Berlin}
 
-%\usecolortheme{orchid}
-%\usecolortheme{rose}
-%\usecolortheme{whale}
-
-\usepackage{lmodern}
 \usepackage[T1]{fontenc}
-\usepackage{textcomp}
 \usepackage{multicol}
 
 \usepackage{minted}
 \usemintedstyle{monokai}
 
-%\newminted{perl}{fontsize=\fontsize{9}{9}}
 \newminted{bash}{fontsize=\fontsize{9}{9}}
 \newminted{c}{fontsize=\fontsize{9}{9}}
 \definecolor{bgc}{HTML}{272822}
 
 \beamertemplatenavigationsymbolsempty
+\setbeamertemplate{headline}{}
 \setbeamertemplate{footline}{}
 
 \title{XS Accessors\\Under The Hood}
 \author{Sergey Aleynikov}
-%\institute{Crazy Panda}
-\date[August 2016]{YAPC Europe 2016}
+\date[August 2016]{YAPC::EU 2016}
 
 \begin{document}{
 
@@ -40,7 +31,6 @@
 \newminted{perl}{fontsize=\fontsize{9}{9}}
 \color{white}
 \setbeamercolor{background canvas}{bg=bgc}
-%\setbeamertemplate{frametitle}[default][colsep=-4bp,rounded=false,shadow=false]
 
 \begin{frame}[fragile]
 \begin{perlcode}
@@ -60,7 +50,6 @@ sub make_accessor {
 \end{perlcode}
 \pause
 basic: Rounded run time per iteration: 3.1598e-07 $\sim$ 3200000/sec
-%\pause
 hash: Rounded run time per iteration: 2.4837e-08 $\sim$ 40000000/sec
 \end{frame}
 
@@ -112,7 +101,6 @@ perl -MO=Concise,-exec,foo \
 6  <1> leavesub[1 ref] K/REFC,1
 \end{bashcode}
 \columnbreak
-%\pause
 \begin{bashcode}
 perl -MO=Concise,-exec,foo \
  -e 'sub foo{ $_[0]->{foo} }'
@@ -415,8 +403,7 @@ Class::Accessor::Inherited::XS::register_types(
 };
 \end{perlcode}
 \end{frame}
-
-}
+} % ends white-on-black
 
 \begin{frame}
 \center{
