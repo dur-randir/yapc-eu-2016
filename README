@@ -1,0 +1,7 @@
+"XS Accessors Under The Hood" talk from YAPC::EU 2016
+
+
+Everyone has written their own accessors' lib. It's like creating an IRC bot or your own ORM. But what does it take to make it fast? Really fast?
+
+I'll talk about creating an accessors' library in XS that supports a wide range of accessors's types and then optimizing it up to and beyond famous Class::XSAccessor's speed.
+
